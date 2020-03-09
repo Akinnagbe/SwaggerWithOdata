@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WeatherAPI.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -13,6 +15,7 @@ namespace WeatherAPI.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
+        [HttpGet]
         [EnableQuery]
         public IEnumerable<WeatherForecast> Get()
         {
